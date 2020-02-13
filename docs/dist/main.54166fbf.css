@@ -1,0 +1,622 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  font-style: italic;
+}
+
+body {
+  overflow-x: hidden;
+}
+body::after {
+  animation: grain 8s steps(10) infinite;
+  background-image: url(https://www.transparenttextures.com/patterns/black-felt.png);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.2;
+  position: fixed;
+  top: -110%;
+  width: 300%;
+}
+@keyframes grain {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
+
+section {
+  position: relative;
+  z-index: 99;
+}
+
+p {
+  font-size: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: lora, arial, sans-serif;
+}
+
+p, span {
+  font-family: karla, arial, sans-serif;
+}
+
+ul, li {
+  font-family: karla, arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+section:first-of-type {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section:first-of-type div {
+  display: block;
+  height: 80px;
+}
+section:first-of-type div p {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  font-size: 2em;
+  font-family: lora;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+section:first-of-type div p span {
+  display: inline-block;
+  padding-left: 100%;
+}
+section:first-of-type div p span img {
+  width: 60px;
+  margin: 0 10px;
+}
+section:first-of-type div p span {
+  animation: infinite-moving-text 20s linear infinite;
+}
+section:first-of-type div p:nth-of-type(2) span {
+  animation-delay: 10s;
+}
+section:first-of-type div:nth-of-type(even) p span {
+  animation-direction: reverse;
+}
+@keyframes infinite-moving-text {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+section:first-of-type div:last-of-type {
+  position: absolute;
+  width: 400px;
+  height: 510px;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  background: #f7f7f7;
+  background: linear-gradient(90deg, rgba(247, 247, 247, 0) 0%, #f7f7f7 20%, #f7f7f7 100%);
+}
+section:first-of-type div:last-of-type img:first-of-type {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  width: 300px;
+  z-index: 2;
+  animation: moving-head 10s linear infinite;
+}
+section:first-of-type div:last-of-type img:nth-of-type(2) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 340px;
+  z-index: 1;
+}
+@keyframes moving-head {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  3.5% {
+    transform: translate(10px, 5px) rotate(10deg);
+  }
+  20% {
+    transform: translate(10px, 5px) rotate(10deg);
+  }
+  23.5% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+section:nth-of-type(2) {
+  position: relative;
+  height: 100vh;
+  background-color: black;
+}
+section:nth-of-type(2) img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  z-index: 999;
+}
+section:nth-of-type(2) div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+section:nth-of-type(2) div:first-of-type {
+  background: #000 url("/stars.def937ea.png") repeat;
+  background-size: 100%;
+  z-index: 0;
+}
+section:nth-of-type(2) div:nth-of-type(2) {
+  background: transparent url("/flash.c1aebdaa.png") repeat;
+  z-index: 1;
+  animation: move-flash 60s linear infinite;
+}
+section:nth-of-type(2) div:nth-of-type(3) {
+  background: transparent url("/clouds.3d65ab04.png") repeat;
+  background-size: 110%;
+  z-index: 2;
+  animation: move-clouds 150s linear infinite;
+}
+@keyframes move-flash {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000vw 500vw;
+  }
+}
+@keyframes move-clouds {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000vw 0;
+  }
+}
+section:nth-of-type(2) img:hover {
+  cursor: pointer;
+}
+section:nth-of-type(2) img:hover ~ div {
+  display: none;
+}
+section:nth-of-type(2) img:hover ~ p:nth-of-type(2) span {
+  opacity: 1;
+  transition: all 0.7s;
+}
+section:nth-of-type(2) p {
+  z-index: 999;
+  position: absolute;
+  font-size: 2em;
+  color: #ffffff;
+}
+section:nth-of-type(2) p:first-of-type {
+  top: 5%;
+  left: 5%;
+}
+section:nth-of-type(2) p:nth-of-type(2) {
+  top: 50%;
+  left: 15%;
+}
+section:nth-of-type(2) p:nth-of-type(2) span {
+  position: absolute;
+  left: 175%;
+  bottom: 150%;
+  font-weight: bold;
+  opacity: 0;
+}
+section:nth-of-type(2) p:nth-of-type(3) {
+  right: 1%;
+  bottom: 10%;
+}
+section:nth-of-type(2) p:nth-of-type(4) {
+  right: 1%;
+  bottom: 4%;
+}
+
+section:nth-of-type(3) {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section:nth-of-type(3) > div:first-of-type {
+  position: relative;
+  width: 600px;
+  height: 200px;
+  margin-left: 100px;
+  perspective: 700px;
+}
+section:nth-of-type(3) > div:first-of-type > div {
+  position: relative;
+  width: 300px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transform: rotateY(35deg) rotatex(-38deg);
+  transition: 300ms ease-in;
+}
+section:nth-of-type(3) > div:first-of-type > div div {
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  background: #ffffff;
+  border: solid 2px black;
+  z-index: 2;
+}
+section:nth-of-type(3) > div:first-of-type > div div:nth-of-type(1) {
+  transform: translateZ(74px);
+}
+section:nth-of-type(3) > div:first-of-type > div div:nth-of-type(2) {
+  transform: rotateX(180deg) translateZ(75px);
+  z-index: 1;
+}
+section:nth-of-type(3) > div:first-of-type > div div:nth-of-type(3) {
+  width: 150px;
+  transform: rotateY(-90deg) translateZ(74px);
+}
+section:nth-of-type(3) > div:first-of-type > div div:nth-of-type(4) {
+  width: 150px;
+  transform: rotateY(90deg) translateZ(225px);
+  z-index: 1;
+}
+section:nth-of-type(3) > div:first-of-type > div div:nth-of-type(5) {
+  height: 150px;
+  transform: rotateX(90deg) translateZ(75px);
+}
+section:nth-of-type(3) > div:first-of-type > div div:nth-of-type(5)::after {
+  position: absolute;
+  content: "RIP - Henry Longfellow";
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+section:nth-of-type(3) > div:first-of-type > div div:nth-of-type(6) {
+  height: 150px;
+  transform: rotateX(-90deg) translateZ(25px);
+  z-index: 1;
+}
+section:nth-of-type(3) > div:first-of-type > div img {
+  position: absolute;
+  top: -220%;
+  left: 10%;
+  transform: rotate(90deg) translate(0) rotateX(0);
+  transform-origin: bottom left;
+  width: 100px;
+  z-index: 1;
+  transition: all 0.3s;
+}
+section:nth-of-type(3) > div:first-of-type > div:hover div:nth-child(5) {
+  animation: lift-top 3s ease-in-out forwards;
+}
+section:nth-of-type(3) > div:first-of-type > div:hover img {
+  transform: rotate(0deg) translateY(60px) rotateX(0);
+  transform-origin: bottom left;
+  transition: all 1s 2s;
+}
+section:nth-of-type(3) p {
+  position: absolute;
+  width: 500px;
+  top: 30%;
+  right: 10%;
+}
+section:nth-of-type(3) p span {
+  display: block;
+}
+@keyframes lift-top {
+  0% {
+    transform: rotateX(90deg) translateZ(76px);
+  }
+  50% {
+    transform: rotateX(90deg) translateZ(76px) translateY(100px);
+  }
+  100% {
+    transform: rotateX(80deg) translateZ(80px) translateY(140px) rotateX(-20deg) translateX(-10px);
+  }
+}
+
+section:nth-of-type(4) {
+  position: relative;
+  max-width: 1280px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section:nth-of-type(4) > div:first-of-type p {
+  width: 700px;
+}
+section:nth-of-type(4) > div:first-of-type p span {
+  display: block;
+}
+section:nth-of-type(4) > div:first-of-type p:first-of-type {
+  margin-bottom: 30px;
+}
+section:nth-of-type(4) > div:nth-of-type(2) {
+  position: relative;
+  width: 100%;
+  right: 5%;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+section:nth-of-type(4) > div:nth-of-type(2) div::before, section:nth-of-type(4) > div:nth-of-type(2) div::after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 70px;
+  border-radius: 130px 130px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  background: linear-gradient(-45deg, #fff, #000, #fff, #000, #fff, #000);
+  background-size: 400% 400%;
+  animation: gradient 2s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  background: linear-gradient(45deg, #fff, #000, #fff, #000);
+  background-size: 300% 400%;
+  animation: gradient 2s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:first-of-type {
+  width: 440px;
+  height: 420px;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:first-of-type::before, section:nth-of-type(4) > div:nth-of-type(2) div:first-of-type::after {
+  left: 220px;
+  width: 220px;
+  height: 380px;
+  animation: gradient 5s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:first-of-type::after {
+  left: 0;
+  animation: gradient 5s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(2) {
+  width: 360px;
+  height: 310px;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(2)::before, section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(2)::after {
+  left: 180px;
+  width: 180px;
+  height: 300px;
+  animation: gradient 4s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(2)::after {
+  left: 0;
+  animation: gradient 4s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(3) {
+  width: 280px;
+  height: 210px;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(3)::before, section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(3)::after {
+  left: 140px;
+  width: 140px;
+  height: 220px;
+  animation: gradient 5s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(3)::after {
+  left: 0;
+  animation: gradient 5s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(4) {
+  width: 200px;
+  height: 140px;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(4)::before, section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(4)::after {
+  left: 100px;
+  width: 100px;
+  height: 160px;
+  animation: gradient 4s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(4)::after {
+  left: 0;
+  animation: gradient 4s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(5) {
+  width: 120px;
+  height: 80px;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(5)::before, section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(5)::after {
+  left: 60px;
+  width: 60px;
+  height: 100px;
+  animation: gradient 5s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(5)::after {
+  left: 0;
+  animation: gradient 5s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(6) {
+  width: 60px;
+  height: 50px;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(6)::before, section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(6)::after {
+  left: 30px;
+  width: 30px;
+  height: 60px;
+  animation: gradient 4s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2) div:nth-of-type(6)::after {
+  left: 0;
+  animation: gradient 4s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2):hover {
+  cursor: pointer;
+}
+section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(6)::before, section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(6)::after {
+  animation: gradient 6s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(5)::before, section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(1)::after {
+  animation: gradient 5s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(4)::before, section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(1)::after {
+  animation: gradient 4s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(3)::before, section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(1)::after {
+  animation: gradient 3s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(2)::before, section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(1)::after {
+  animation: gradient 2s ease infinite;
+}
+section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(1)::before, section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(1)::after {
+  animation: gradient 1s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+section:nth-of-type(5) {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:nth-of-type(5) svg {
+  max-width: 400px;
+  height: 500px;
+}
+section:nth-of-type(5) path {
+  fill: #b7b3b3;
+}
+section:nth-of-type(5) .straw, section:nth-of-type(5) .ground, section:nth-of-type(5) .leaf, section:nth-of-type(5) .grain {
+  fill: none;
+  stroke: #000;
+  stroke-width: 16;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+section:nth-of-type(5) .leaf {
+  stroke-width: 6;
+}
+section:nth-of-type(5) .ground {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 3s linear forwards;
+}
+section:nth-of-type(5) .straw {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw 5s 2s linear forwards;
+}
+section:nth-of-type(5) .grain {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: draw 5s 5.5s linear forwards;
+}
+section:nth-of-type(5) .leaf {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawleaf 3s 7s linear forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes drawleaf {
+  0% {
+    stroke-dashoffset: 200;
+    fill: transparent;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #000;
+  }
+}
+
+/*# sourceMappingURL=/main.54166fbf.css.map */

@@ -1,0 +1,205 @@
+section:nth-of-type(4) {
+  position: relative;
+  max-width: 1280px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > div:first-of-type {
+    p {
+      width: 700px;
+
+      span {
+        display: block;
+      }
+
+      &:first-of-type {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  & > div:nth-of-type(2) {
+    position: relative;
+    width: 100%;
+    right: 5%;
+
+    div {
+      position: absolute;
+      width: 100px;
+      height: 80px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      &::before, &::after {
+        position: absolute;
+        content: "";
+        left: 50px;
+        top: 0;
+        width: 50px;
+        height: 70px;
+        border-radius: 130px 130px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+        background: linear-gradient(-45deg, #fff, #000, #fff, #000, #fff, #000);
+        background-size: 400% 400%;
+        animation: gradient 2s ease infinite;
+      }
+
+      &::after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin :100% 100%;
+        background: linear-gradient(45deg, #fff, #000, #fff, #000);
+        background-size: 300% 400%;
+        animation: gradient 2s ease infinite;
+      }
+
+      &:first-of-type {
+        width: 440px;
+        height: 420px;
+
+        &::before, &::after {
+          left: 220px;
+          width: 220px;
+          height: 380px;
+          animation: gradient 5s ease infinite;
+        }
+
+        &::after {
+          left: 0;
+          animation: gradient 5s ease infinite;
+        }
+      }
+
+      &:nth-of-type(2) {
+        width: 360px;
+        height: 310px;
+
+        &::before, &::after {
+          left: 180px;
+          width: 180px;
+          height: 300px;
+          animation: gradient 4s ease infinite;
+        }
+
+        &::after {
+          left: 0;
+          animation: gradient 4s ease infinite;
+        }
+      }
+
+      &:nth-of-type(3) {
+        width: 280px;
+        height: 210px;
+
+        &::before, &::after {
+          left: 140px;
+          width: 140px;
+          height: 220px;
+          animation: gradient 5s ease infinite;
+        }
+
+        &::after {
+          left: 0;
+          animation: gradient 5s ease infinite;
+        }
+      }
+
+      &:nth-of-type(4) {
+        width: 200px;
+        height: 140px;
+
+        &::before, &::after {
+          left: 100px;
+          width: 100px;
+          height: 160px;
+          animation: gradient 4s ease infinite;
+        }
+
+        &::after {
+          left: 0;
+          animation: gradient 4s ease infinite;
+        }
+      }
+
+      &:nth-of-type(5) {
+        width: 120px;
+        height: 80px;
+
+        &::before, &::after {
+          left: 60px;
+          width: 60px;
+          height: 100px;
+          animation: gradient 5s ease infinite;
+        }
+
+        &::after {
+          left: 0;
+          animation: gradient 5s ease infinite;
+        }
+      }
+
+      &:nth-of-type(6) {
+        width: 60px;
+        height: 50px;
+
+        &::before, &::after {
+          left: 30px;
+          width: 30px;
+          height: 60px;
+          animation: gradient 4s ease infinite;
+        }
+
+        &::after {
+          left: 0;
+          animation: gradient 4s ease infinite;
+        }
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      div:nth-of-type(6)::before,  div:nth-of-type(6)::after {
+        animation: gradient 6s ease infinite;
+      }
+
+      div:nth-of-type(5)::before,  div:nth-of-type(1)::after {
+        animation: gradient 5s ease infinite;
+      }
+
+      div:nth-of-type(4)::before,  div:nth-of-type(1)::after {
+        animation: gradient 4s ease infinite;
+      }
+
+      div:nth-of-type(3)::before,  div:nth-of-type(1)::after {
+        animation: gradient 3s ease infinite;
+      }
+
+      div:nth-of-type(2)::before,  div:nth-of-type(1)::after {
+        animation: gradient 2s ease infinite;
+      }
+
+      div:nth-of-type(1)::before,  div:nth-of-type(1)::after {
+        animation: gradient 1s ease infinite;
+      }
+    }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
