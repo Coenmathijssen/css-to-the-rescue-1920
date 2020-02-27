@@ -1,6 +1,7 @@
 section:nth-of-type(5) {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -26,39 +27,74 @@ section:nth-of-type(5) {
   }
 
 
-  .ground {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: draw 3s linear forwards;
-  }
+  // .ground {
+  //   stroke-dasharray: 1000;
+  //   stroke-dashoffset: 1000;
+  //   // animation: draw 3s linear forwards;
+  // }
 
   .straw {
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
-    animation: draw 5s 2s linear forwards;
   }
 
   .grain {
+    stroke-width: 16;
     stroke-dasharray: 30;
     stroke-dashoffset: 30;
-    animation: draw 5s 5.5s linear forwards;
   }
 
   .leaf {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
-    animation: drawleaf 3s 7s linear forwards;
-    // animation: fill 1s 7.5s linear forwards;
   }
+
+  label {
+    cursor: pointer;
+  }
+
+  input#water[type="radio"]:checked {
+    & ~ svg .leaf {
+      animation: drawLeaf 3s 7s linear forwards; // 3 5
+    }
+
+    & ~ svg .grain {
+      animation: drawGrain 5s 2.5s linear forwards; // 5 3.5
+    }
+
+    & ~ svg .straw {
+      animation: drawStraw 5s linear forwards; // 5
+    }
+  }
+
+  input#kill[type="radio"]:checked {
+    & ~ svg .leaf {
+      animation: drawLeafReverse 1s forwards;
+    }
+
+    & ~ svg .grain {
+      animation: drawGrainReverse 3s forwards;
+    }
+
+    & ~ svg .straw {
+      animation: drawStrawReverse 6s forwards;
+    }
+  }
+
+    label {
+      background: $black;
+      color: $white;
+      padding: 0.5rem 1rem;
+      font-family: 'lora', arial;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      left: -200%;
+    }
 }
 
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0
-  }
-}
-
-@keyframes drawleaf {
+@keyframes drawLeaf {
   0% {
     stroke-dashoffset: 200;
     fill: transparent;
@@ -70,5 +106,73 @@ section:nth-of-type(5) {
   100% {
     stroke-dashoffset: 0;
     fill: #000;
+  }
+}
+
+@keyframes drawLeafReverse {
+  0% {
+    stroke-dashoffset: 0;
+    fill: #000;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 200;
+    fill: transparent;
+  }
+}
+
+@keyframes drawGrain {
+  0% {
+    stroke-dashoffset: 35;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawGrainReverse {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 35;
+  }
+}
+
+@keyframes drawStraw {
+  0% {
+    stroke-dashoffset: 300;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawStrawReverse {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 300;
+  }
+}
+
+#plant .grain.first {
+  transition: all cubic-bezier(.17,.73,.5,.87) 1s;
+    animation-fill-mode: forwards;
+}
+
+#plant:hover {
+  @for $i from 1 through 17 {
+    .grain.first:nth-child(#{$i}) {
+     transform: translateX((($i + 0.001) * $i * 1.001px) - 100px)
+    }
   }
 }

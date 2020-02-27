@@ -2,7 +2,6 @@ section:first-of-type {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +16,7 @@ section:first-of-type {
       overflow: hidden;
       position: absolute;
       font-size: 2em;
-      font-family: lora;
+      font-family: lora, serif;
       font-weight: 600;
       letter-spacing: 2px;
 
