@@ -28,8 +28,13 @@ These command are editable in the package.json file
 <br></br>
 6. Open the localhost to view the webapp.
 
-## Concept
-
+## Features
+- Marquee text
+- Animating backgrounds
+- 3D css elements creation
+- SVG animation
+- Radio button hacks
+- Dark mode
 
 ## Deployment
 De website live zetten kan via GitHub Pages. 
