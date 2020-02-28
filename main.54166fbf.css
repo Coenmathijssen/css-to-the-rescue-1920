@@ -22,6 +22,7 @@ footer {
 
 body {
   overflow-x: hidden;
+  margin-top: 5vh;
 }
 body::after {
   animation: grain 8s steps(10) infinite;
@@ -74,6 +75,36 @@ section {
 
 p {
   font-size: 2em;
+}
+
+label {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-family: "lora", arial;
+  cursor: pointer;
+}
+
+body > label {
+  position: relative;
+  z-index: 999;
+}
+
+input[type=radio] {
+  opacity: 0;
+}
+
+input#dark[type=radio]:checked ~ main {
+  background-color: #fefefe;
+  filter: invert(100%);
+  position: relative;
+  z-index: 999;
+}
+input#dark[type=radio]:checked ~ main section:first-of-type img {
+  filter: invert(100%);
+}
+input#dark[type=radio]:checked * {
+  background-color: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -557,6 +588,11 @@ section:nth-of-type(4) > div:nth-of-type(2):hover div:nth-of-type(1)::before, se
 section:nth-of-type(5) {
   height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:nth-of-type(5) div:nth-of-type(2) {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -564,6 +600,7 @@ section:nth-of-type(5) {
 section:nth-of-type(5) svg {
   max-width: 400px;
   height: 500px;
+  margin-top: 5vh;
 }
 section:nth-of-type(5) path {
   fill: #b7b3b3;
@@ -591,9 +628,6 @@ section:nth-of-type(5) .leaf {
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
 }
-section:nth-of-type(5) label {
-  cursor: pointer;
-}
 section:nth-of-type(5) input#water[type=radio]:checked ~ svg .leaf {
   animation: drawLeaf 3s 7s linear forwards;
 }
@@ -611,16 +645,6 @@ section:nth-of-type(5) input#kill[type=radio]:checked ~ svg .grain {
 }
 section:nth-of-type(5) input#kill[type=radio]:checked ~ svg .straw {
   animation: drawStrawReverse 6s forwards;
-}
-section:nth-of-type(5) label {
-  background: #000000;
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  font-family: "lora", arial;
-}
-section:nth-of-type(5) .visually-hidden {
-  position: absolute;
-  left: -200%;
 }
 
 @keyframes drawLeaf {
@@ -682,62 +706,6 @@ section:nth-of-type(5) .visually-hidden {
   100% {
     stroke-dashoffset: 300;
   }
-}
-#plant .grain.first {
-  transition: all cubic-bezier(0.17, 0.73, 0.5, 0.87) 1s;
-  animation-fill-mode: forwards;
-}
-
-#plant:hover .grain.first:nth-child(1) {
-  transform: translateX(-98.997999px);
-}
-#plant:hover .grain.first:nth-child(2) {
-  transform: translateX(-95.993998px);
-}
-#plant:hover .grain.first:nth-child(3) {
-  transform: translateX(-90.987997px);
-}
-#plant:hover .grain.first:nth-child(4) {
-  transform: translateX(-83.979996px);
-}
-#plant:hover .grain.first:nth-child(5) {
-  transform: translateX(-74.969995px);
-}
-#plant:hover .grain.first:nth-child(6) {
-  transform: translateX(-63.957994px);
-}
-#plant:hover .grain.first:nth-child(7) {
-  transform: translateX(-50.943993px);
-}
-#plant:hover .grain.first:nth-child(8) {
-  transform: translateX(-35.927992px);
-}
-#plant:hover .grain.first:nth-child(9) {
-  transform: translateX(-18.909991px);
-}
-#plant:hover .grain.first:nth-child(10) {
-  transform: translateX(0.11001px);
-}
-#plant:hover .grain.first:nth-child(11) {
-  transform: translateX(21.132011px);
-}
-#plant:hover .grain.first:nth-child(12) {
-  transform: translateX(44.156012px);
-}
-#plant:hover .grain.first:nth-child(13) {
-  transform: translateX(69.182013px);
-}
-#plant:hover .grain.first:nth-child(14) {
-  transform: translateX(96.210014px);
-}
-#plant:hover .grain.first:nth-child(15) {
-  transform: translateX(125.240015px);
-}
-#plant:hover .grain.first:nth-child(16) {
-  transform: translateX(156.272016px);
-}
-#plant:hover .grain.first:nth-child(17) {
-  transform: translateX(189.306017px);
 }
 
 /*# sourceMappingURL=/main.54166fbf.css.map */
