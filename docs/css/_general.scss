@@ -22,6 +22,7 @@ footer {
 
 body {
   overflow-x: hidden;
+  margin-top: 5vh;
 
   &::after {
     animation: grain 8s steps(10) infinite;
@@ -57,16 +58,44 @@ p {
   font-size: 2em;
 }
 
+label {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-family: 'lora', arial;
+  cursor: pointer;
+}
 
-// :root {
-//    background-color: #fefefe;
-//    filter: invert(100%);
-// }
+body > label {
+  position: relative;
+  z-index: 999;
+}
 
-// * {
-//    background-color: inherit;
-// }
+input[type="radio"] {
+  opacity: 0;
+}
 
-// img:not([src*=".svg"]) {
-//    filter: invert(100%);
-// }
+input#dark[type="radio"]:checked {
+  & ~ main {
+    background-color: #fefefe;
+    filter: invert(100%);
+    position: relative;
+    z-index: 999;
+
+    section:first-of-type {
+      img {
+        filter: invert(100%);
+      }
+    }
+  }
+
+  * {
+    background-color: inherit;
+  }
+}
+
+
+
+
+
+

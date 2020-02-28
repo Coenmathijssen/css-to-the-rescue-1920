@@ -1,13 +1,20 @@
 section:nth-of-type(5) {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   svg {
     max-width: 400px;
     height: 500px;
+    margin-top: 5vh;
   }
 
   path {
@@ -49,10 +56,6 @@ section:nth-of-type(5) {
     stroke-dashoffset: 200;
   }
 
-  label {
-    cursor: pointer;
-  }
-
   input#water[type="radio"]:checked {
     & ~ svg .leaf {
       animation: drawLeaf 3s 7s linear forwards; // 3 5
@@ -80,18 +83,6 @@ section:nth-of-type(5) {
       animation: drawStrawReverse 6s forwards;
     }
   }
-
-    label {
-      background: $black;
-      color: $white;
-      padding: 0.5rem 1rem;
-      font-family: 'lora', arial;
-    }
-
-    .visually-hidden {
-      position: absolute;
-      left: -200%;
-    }
 }
 
 @keyframes drawLeaf {
@@ -164,15 +155,15 @@ section:nth-of-type(5) {
   }
 }
 
-#plant .grain.first {
-  transition: all cubic-bezier(.17,.73,.5,.87) 1s;
-    animation-fill-mode: forwards;
-}
+// #plant .grain.first {
+//   transition: all cubic-bezier(.17,.73,.5,.87) 1s;
+//     animation-fill-mode: forwards;
+// }
 
-#plant:hover {
-  @for $i from 1 through 17 {
-    .grain.first:nth-child(#{$i}) {
-     transform: translateX((($i + 0.001) * $i * 1.001px) - 100px)
-    }
-  }
-}
+// #plant:hover {
+//   @for $i from 1 through 17 {
+//     .grain.first:nth-child(#{$i}) {
+//      transform: translateX((($i + 0.001) * $i * 1.001px) - 100px)
+//     }
+//   }
+// }
