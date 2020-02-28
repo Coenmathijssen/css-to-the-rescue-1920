@@ -242,17 +242,17 @@ section:nth-of-type(2) div {
   display: block;
 }
 section:nth-of-type(2) div:first-of-type {
-  background: #000 url("/stars.def937ea.png") repeat;
+  background: #000 url("./stars.def937ea.png") repeat;
   background-size: 100%;
   z-index: 0;
 }
 section:nth-of-type(2) div:nth-of-type(2) {
-  background: transparent url("/flash.c1aebdaa.png") repeat;
+  background: transparent url("./flash.c1aebdaa.png") repeat;
   z-index: 1;
   animation: move-flash 60s linear infinite;
 }
 section:nth-of-type(2) div:nth-of-type(3) {
-  background: transparent url("/clouds.3d65ab04.png") repeat;
+  background: transparent url("./clouds.3d65ab04.png") repeat;
   background-size: 110%;
   z-index: 2;
   animation: move-clouds 150s linear infinite;
